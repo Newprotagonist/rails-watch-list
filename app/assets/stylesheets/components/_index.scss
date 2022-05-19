@@ -3,3 +3,59 @@
 @import "avatar";
 @import "form_legend_clear";
 @import "navbar";
+
+.card-list {
+  background-color: $beige;
+  padding: 5px;
+  height: 300px;
+  width: 300px;
+  border-radius: 5px;
+  margin-left: 40px;
+  text-align: center;
+  background-image: url('https://picsum.photos/300/300');
+  background-size:cover ;
+  padding-top: 150px;
+}
+
+.card-list a {
+  color: white;
+  text-decoration: none;
+}
+
+.lists-container {
+  display: flex;
+  margin: auto 0;
+  align-items: center;
+  justify-content: center;
+  width: 80em;
+  text-align: center;
+}
+
+.lists {
+  text-align: center;
+  width: 80em;
+  margin-top: 20px;
+}
+
+.form {
+  margin-bottom: 50px;
+  width: 50em;
+  padding-left: 489px;
+  justify-content: center;
+}
+
+a{
+  color: #03e9f4;
+  text-decoration: none;
+  transition: 0.5s;
+  overflow: hidden;
+
+}
+a:hover{
+  background: #03e9f4;
+  color: #050801;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 200px #03e9f4;
+}

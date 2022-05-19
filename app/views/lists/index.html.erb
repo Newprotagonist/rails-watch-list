@@ -1,0 +1,39 @@
+<div class="banner" style="background-image, url(<%= asset_path('movie.jpg')%>)">
+  <h1>List your favorites Movies</h1>
+</div>
+
+<div class='lists'>
+      <h1>Lists</h1>
+  <div class="lists-container">
+    <% @lists.each do |list| %>
+    <div class="card-list">
+      <%=link_to list.name, list_path(list.id) %>
+      <br>
+      <%= link_to "Delete",
+    list_path(list),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+    class:"actions" %>
+    </div>
+    <% end %>
+    </div>
+  </div>
+</div>
+
+
+<div class='lists' id="new-list">
+  <h2>Add a new list</h2>
+  <div class='form'>
+    <%= simple_form_for @list do |f| %>
+      <%= f.input :name %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
+
+<a href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Neon button
+    </a>

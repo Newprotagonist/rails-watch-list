@@ -11,6 +11,20 @@
   </head>
 
   <body>
+    <div class="navbar">
+      <div class="icon">
+      <a href="">
+        <%= image_tag 'Bowser.webp', height:50 %>
+      </a>
+      </div>
+      <div class="search">
+        <input type="search">
+      </div>
+      <div class="actions">
+        <%= link_to "Back to all lists", lists_path %>
+        <a href="">Create a list</a>
+      </div>
+    </div>
     <%= yield %>
   </body>
 </html>

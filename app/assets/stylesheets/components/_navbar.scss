@@ -1,12 +1,19 @@
-.navbar-lewagon {
+.navbar {
+  display: flex;
   justify-content: space-between;
-  background: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: $black;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.actions a {
+  color: $black;
+  background-color: $beige;
+  padding: 5px;
+  border-radius: 5px;
+  text-decoration: none;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.search input {
+  width: 500px;
 }

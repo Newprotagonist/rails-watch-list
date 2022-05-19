@@ -1,1 +1,10 @@
 // Specific CSS for your home-page
+.banner {
+  background-color: $gray;
+  color: white;
+  background-image: asset-url('movie.jpg');
+  background-size: cover;
+  height: 500px;
+  padding: 250px;
+  text-align: center;
+}
