@@ -1,24 +1,33 @@
 <h1><%= @list.name.capitalize %></h1>
 
-<h2>Movies</h2>
+<div class="container">
+  <div class="row">
+        <% @list.bookmarks.each do |bookmark| %>
+        <% movie = Movie.find(bookmark.movie_id) %>
+    <div class="col-4">
+      <div class="card" style="width: 300px; overflow: hidden;">
+          <%= image_tag movie.poster_url, height:300, width:300 %>
+        <div class="card-body">
+          <div class="card-content">
+              <%= movie.title %>
+              <br>
+              <%= movie.rating %>/10
+          </div>
+          <div class="card-action">
+              <%= link_to "Delete",
+              bookmark_path(bookmark),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+          class:"btn btn-danger" %>
+          </div>
+        </div>
+    </div>
+  </div>
+      <% end %>
+</div>
 
-  <% @list.movies.each do |movie| %>
-  <%= movie.title %>: <%= @bookmark.comment %>
-  <%= movie.rating %>
-  <%= image_tag movie.poster_url, height:300, width:300 %>
-  <% end %>
-    <% @list.bookmarks.each do |bookmark| %>
-    <%= bookmark.comment %>
-    <% end %>
-  <%= link_to "Delete",
-    bookmark_path,
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 
-<h2>Add a movie</h2>
-<%= simple_form_for [@list, @bookmark] do |f| %>
-<%= f.association :movie %>
-<%= f.input :comment %>
-<%= f.submit %>
-<% end %>
+
+<a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#movie" href="">Add a Movie</a>
 
 <%= render 'modal' %>
+<%= render 'modal-movie' %>
