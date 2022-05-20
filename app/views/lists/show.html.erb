@@ -1,4 +1,7 @@
-<h1><%= @list.name.capitalize %></h1>
+<div class='container'>
+  <h1><%= @list.name.capitalize %></h1>
+  <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#movie" href="">Add a Movie</a>
+</div>
 
 <div class="container">
   <div class="row">
@@ -9,7 +12,11 @@
           <%= image_tag movie.poster_url, height:300, width:300 %>
         <div class="card-body">
           <div class="card-content">
-              <%= movie.title %>
+              <strong><%= movie.title %></strong>
+              <br>
+              <div class="overview">
+                <em><%= movie.overview %></em>
+              </div>
               <br>
               <%= movie.rating %>/10
           </div>
@@ -24,10 +31,6 @@
   </div>
       <% end %>
 </div>
-
-
-
-<a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#movie" href="">Add a Movie</a>
 
 <%= render 'modal' %>
 <%= render 'modal-movie' %>
