@@ -4,58 +4,40 @@
 @import "form_legend_clear";
 @import "navbar";
 
-.card-list {
+.card {
   background-color: $beige;
-  padding: 5px;
-  height: 300px;
-  width: 300px;
-  border-radius: 5px;
-  margin-left: 40px;
+  position: relative;
   text-align: center;
-  background-image: url('https://picsum.photos/300/300');
-  background-size:cover ;
-  padding-top: 150px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
-.card-list a {
-  color: white;
+.card-body {
+  background-color: white;
+}
+
+.card-title a {
   text-decoration: none;
 }
 
-.lists-container {
-  display: flex;
-  margin: auto 0;
-  align-items: center;
-  justify-content: center;
-  width: 80em;
-  text-align: center;
+.card-action a {
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }
 
-.lists {
+.container {
   text-align: center;
-  width: 80em;
+  margin-bottom: 20px;
   margin-top: 20px;
 }
 
 .form {
-  margin-bottom: 50px;
   width: 50em;
-  padding-left: 489px;
-  justify-content: center;
 }
 
-a{
-  color: #03e9f4;
-  text-decoration: none;
-  transition: 0.5s;
-  overflow: hidden;
-
-}
-a:hover{
-  background: #03e9f4;
-  color: #050801;
-  box-shadow: 0 0 5px #03e9f4,
-              0 0 25px #03e9f4,
-              0 0 50px #03e9f4,
-              0 0 200px #03e9f4;
+.lists {
+  border-bottom: solid;
+  margin-bottom: 20px;
 }

@@ -1,13 +1,18 @@
-<h1>Show <%= @list.name.capitalize %></h1>
+<h1><%= @list.name.capitalize %></h1>
 
 <h2>Movies</h2>
-<ul>
-  <% @list.bookmarks.each do |bookmark| %>
-  <li><%= Movie.find(bookmark.movie_id).title %>: <%= bookmark.comment %> <%= link_to "Delete",
-    bookmark_path(bookmark),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
+
+  <% @list.movies.each do |movie| %>
+  <%= movie.title %>: <%= @bookmark.comment %>
+  <%= movie.rating %>
+  <%= image_tag movie.poster_url, height:300, width:300 %>
   <% end %>
-</ul>
+    <% @list.bookmarks.each do |bookmark| %>
+    <%= bookmark.comment %>
+    <% end %>
+  <%= link_to "Delete",
+    bookmark_path,
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 
 <h2>Add a movie</h2>
 <%= simple_form_for [@list, @bookmark] do |f| %>
@@ -15,3 +20,5 @@
 <%= f.input :comment %>
 <%= f.submit %>
 <% end %>
+
+<%= render 'modal' %>

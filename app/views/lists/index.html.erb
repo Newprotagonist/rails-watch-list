@@ -2,30 +2,32 @@
   <h1>List your favorites Movies</h1>
 </div>
 
-<div class='lists'>
-      <h1>Lists</h1>
-  <div class="lists-container">
-    <% @lists.each do |list| %>
-    <div class="card-list">
-      <%=link_to list.name, list_path(list.id) %>
-      <br>
-      <%= link_to "Delete",
-    list_path(list),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
-    class:"actions" %>
-    </div>
-    <% end %>
+
+<div class="container">
+  <div class="row lists">
+    <h1>Lists</h1>
+  </div>
+  <div class="row">
+        <% @lists.each do |list| %>
+    <div class="col-4">
+      <div class="card" style="width: 300px; overflow: hidden;">
+      <% if list.photo.key %>
+        <%= cl_image_tag list.photo.key, height: 300, width: 300 %>
+        <% end %>
+        <div class="card-body">
+          <div class="card-title">
+            <%=link_to list.name, list_path(list.id) %>
+          </div>
+          <div class="card-action">
+            <%= link_to "Delete",
+            list_path(list),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+            class:"btn btn-primary" %>
+          </div>
+        </div>
     </div>
   </div>
+      <% end %>
 </div>
 
-
-<div class='lists' id="new-list">
-  <h2>Add a new list</h2>
-  <div class='form'>
-    <%= simple_form_for @list do |f| %>
-      <%= f.input :name %>
-      <%= f.submit %>
-    <% end %>
-  </div>
-</div>
+<%= render 'modal' %>

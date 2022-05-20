@@ -17,7 +17,7 @@ class ListsController < ApplicationController
     if @list.save
       redirect_to list_path(@list.id)
     else
-      render 'index', status: :unprocessable_entity
+      render 'index', status: :unprocessable_entity, message: 'Missing something to create a list'
     end
   end
 
@@ -30,6 +30,6 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :photo)
   end
 end
