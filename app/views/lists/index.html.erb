@@ -9,8 +9,8 @@
   </div>
   <div class="row">
         <% @lists.each do |list| %>
-    <div class="col-4">
-      <div class="card" style="width: 300px; overflow: hidden;">
+    <div class="col-sm-12 col-md-6 col-lg-4">
+      <div class="card mx-auto" style="width: 300px; overflow: hidden;">
       <% if list.photo.key %>
         <%= cl_image_tag list.photo.key, height: 300, width: 300 %>
         <% end %>

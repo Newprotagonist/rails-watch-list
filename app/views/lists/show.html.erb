@@ -7,8 +7,8 @@
   <div class="row">
         <% @list.bookmarks.each do |bookmark| %>
         <% movie = Movie.find(bookmark.movie_id) %>
-    <div class="col-4">
-      <div class="card" style="width: 300px; overflow: hidden;">
+    <div class="col-sm-12 col-md-6 col-lg-4">
+      <div class="card mx-auto" style="width: 300px; overflow: hidden;">
           <%= image_tag movie.poster_url, height:300, width:300 %>
         <div class="card-body">
           <div class="card-content">
